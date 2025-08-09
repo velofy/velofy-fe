@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Velofy Design System - All colors in HSL tokens */
+@layer base {
+  :root {
+    /* Dark-first palette */
+    --background: 240 6% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 240 6% 8%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 240 6% 6%;
+    --popover-foreground: 210 40% 96%;
+
+    /* Accents */
+    --primary: 265 89% 63%; /* Electric violet */
+    --primary-foreground: 220 30% 96%;
+
+    --secondary: 196 100% 50%; /* Cyan */
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 240 5% 15%;
+    --muted-foreground: 215 16% 70%;
+
+    --accent: 200 90% 55%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 265 89% 63%;
+
+    --radius: 0.9rem;
+
+    /* Sidebar (unused now but mapped) */
+    --sidebar-background: 240 6% 8%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 265 89% 63%;
+    --sidebar-primary-foreground: 222 47.4% 11.2%;
+    --sidebar-accent: 240 5% 15%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 240 6% 20%;
+    --sidebar-ring: 265 89% 63%;
+
+    /* Gradients & Shadows */
+    --gradient-primary: radial-gradient(1200px 800px at var(--x,50%) var(--y,20%), hsl(var(--primary) / 0.35), transparent 60%), radial-gradient(900px 600px at calc(100% - var(--x,50%)) calc(100% - var(--y,20%)), hsl(var(--accent) / 0.25), transparent 60%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--card)));
+
+    --shadow-elevated: 0 20px 50px -20px hsl(var(--primary) / 0.35);
+    --shadow-glow: 0 0 50px hsl(var(--primary) / 0.45);
+  }
+
+  .dark {
+    /* Keep parity (same as root for this design) */
+    --background: 240 6% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 240 6% 8%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 240 6% 6%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 265 89% 63%;
+    --primary-foreground: 220 30% 96%;
+
+    --secondary: 196 100% 50%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 240 5% 15%;
+    --muted-foreground: 215 16% 70%;
+
+    --accent: 200 90% 55%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 265 89% 63%;
+
+    --sidebar-background: 240 6% 8%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 265 89% 63%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 5% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 240 5% 15%;
+    --sidebar-ring: 265 89% 63%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground font-sans; }
+}
+
+/* Components & utilities */
+@layer components {
+  .container-app {
+    @apply container mx-auto px-6 sm:px-8;
+  }
+
+  .hero-aurora {
+    position: relative;
+  }
+  .hero-aurora::before {
+    content: "";
+    position: absolute;
+    inset: -20% -10% -10% -10%;
+    background: var(--gradient-primary);
+    filter: blur(60px) saturate(120%);
+    transform: translate3d(0,0,0);
+    animation: aurora-move 18s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .card-glass {
+    @apply bg-card/40 backdrop-blur border border-border/60 shadow-sm;
+  }
+
+  .story-link {
+    position: relative;
+    display: inline-block;
+  }
+  .story-link::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -2px;
+    width: 100%; height: 2px;
+    transform: scaleX(0);
+    transform-origin: 100% 100%;
+    transition: transform 300ms;
+    background: hsl(var(--primary));
+  }
+  .story-link:hover::after { transform: scaleX(1); transform-origin: 0 100%; }
+
+  .hover-scale { @apply transition-transform duration-200 hover:scale-[1.03]; }
+}
