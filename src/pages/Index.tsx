@@ -133,7 +133,7 @@ const Approach = () => (
       <div>
         <h2 className="text-3xl md:text-5xl font-display font-semibold tracking-tight mb-4">High-agency, AI-native</h2>
         <p className="text-muted-foreground leading-relaxed">
-          We move fast, ship ambitiously, and obsess over experience. LLMs and Generative AI aren’t features—they’re the canvas we build on.
+          We move fast, ship ambitiously, and obsess over experience. LLMs and Generative AI aren’t features-they’re the canvas we build on.
         </p>
       </div>
       <div className="card-glass rounded-2xl p-6 md:p-8">
