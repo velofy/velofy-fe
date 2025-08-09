@@ -111,13 +111,13 @@ const Products = () => (
       <p className="text-muted-foreground max-w-2xl mb-10">Two focused experiences built for speed and clarity.</p>
       <div className="grid gap-6 md:gap-8 md:grid-cols-2">
         <ProductCard
-          title="Kaiross — discover people in natural language"
+          title="Kaiross - discover people in natural language"
           description="A social platform where search feels like a conversation. Find people, not keywords."
           href="https://kaiross.velofyhq.com"
           tag="AI Social Discovery"
         />
         <ProductCard
-          title="TaxPe — file taxes in 60 seconds"
+          title="TaxPe - file taxes in less than 3 minutes"
           description="Upload, confirm, and file. Automated checks, human-level answers when you need them."
           href="https://taxpe.velofyhq.com"
           tag="AI Tax Filing"

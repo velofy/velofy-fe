@@ -1,2 +1,2 @@
 # Velofy
-## Making Generative AI backed products that people want.
+Making Generative AI backed products that people want.
